@@ -212,9 +212,9 @@ hr {
     display: flex;
     position: absolute;
 
-    top: 50%;
+    top: 14px;
     /* transform: translateY(-50%); */
-    left: 14px;
+    left: 65%;
     color: #84ff0f;
     font-size: 11px;
   }
