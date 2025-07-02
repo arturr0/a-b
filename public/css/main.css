@@ -147,6 +147,7 @@ hr {
 
 
 
+
   .main #displayed-image {
     height: 250px;
     width: auto;
@@ -194,6 +195,18 @@ hr {
 
 }
 
+@media only screen and (pointer: coarse) and (orientation: portrait) {
+  .menu #visits {
+    display: none;
+  }
+
+  .menu #lang {
+    display: none;
+  }
+
+
+}
+
 @media only screen and (max-width: 768px) and (orientation: portrait) {
   .main .projectImg {
     height: auto;
@@ -201,9 +214,7 @@ hr {
     width: 50vw;
   }
 
-  .mail {
-    display: none !important;
-  }
+
 
   .main #displayed-image {
     height: 200px;
@@ -1280,7 +1291,9 @@ width: 100%;
     /* padding: 7px; */
   }
 
-
+  .mailP {
+    display: none !important;
+  }
 
   .project .projectTitle {
     font-size: clamp(1rem, 4vh, 2rem);
