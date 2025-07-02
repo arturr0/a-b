@@ -200,11 +200,24 @@ hr {
     display: none;
   }
 
+  .mail .fas.fa-envelope {
+    display: none;
+  }
+
   .menu #lang {
     display: none;
   }
 
+  .menu .mail {
+    display: flex;
+    position: absolute;
 
+    top: 50%;
+    /* transform: translateY(-50%); */
+    left: 65%;
+    color: #84ff0f;
+    font-size: 11px;
+  }
 }
 
 @media only screen and (max-width: 768px) and (orientation: portrait) {
@@ -1289,6 +1302,14 @@ width: 100%;
   .svgText .devicon-socketio-original {
     font-size: 28px;
     /* padding: 7px; */
+  }
+
+  .menu .mail {
+    display: flex;
+    position: fixed;
+    top: 3px;
+    left: 270px;
+    color: #84ff0f;
   }
 
   .mailP {
