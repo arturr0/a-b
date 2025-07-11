@@ -146,25 +146,19 @@ html(lang='en')
               hr(style="margin-right: 20px; margin-left: 20px; margin-bottom: 0; margin-top: 0;")
             div.project
               .projectTitle
-                | "KINEMATICS LAB"
+                | "HANDWRITING RECOGNITION"
               .imageDescription
                 .image
-                  img(src='https://cdn.glitch.global/79283f6f-ef1e-4285-822b-eaefe68c462e/m.png?v=1751414877731' onclick="display()").projectImg
+                  img(src='https://camo.githubusercontent.com/4a328ccda13b713fd38f69109f0c9563ba441cdfccafa9d241c1b75c363cea5e/68747470733a2f2f63646e2e676c697463682e676c6f62616c2f37393238336636662d656631652d343238352d383232622d6561656665363863343632652f362e706e673f763d31373531323335353837313438' onclick="display()").projectImg
                 .description
-                  | This browser-based visualization tool helps users explore fundamental mechanics through interactive function graphing. Built with p5.js, it dynamically renders position-time functions alongside their velocity and acceleration curves using real-time numerical derivatives. Ideal for introductory dynamics, the app supports polynomial motion, harmonic oscillations, and basic vibrations with adjustable parameters. Features include live tangent lines, area calculations, and intuitive graph scaling—all designed to build intuition around how derivatives represent motion.
+                  | This is a simple digit recognition app that uses a neural network trained on the MNIST dataset. Users can draw digits (0-9) on a canvas, and the model will try to predict the number in real time. The app demonstrates how neural networks can process visual input directly from user handwriting. Note: Due to Google security constraints (for example, cross-origin restrictions), the model does not work online and must be run locally. To run locally: See the README file in the GitHub repository for setup instructions.              
               .tables(style="width: 35%") 
                 .tech
                   div.border.not(style="white-space: nowrap;") 
                     i.icon-cogs
                     p.borderContent
-                      | Math.js, p5.js
-                a(href='https://kinematics-lab.onrender.com/' target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit;").link
-                  .linkEng
-                    div.border(style="white-space: nowrap;") 
-                      i.icon-globe
-                      p.borderContent
-                        | Link
-                a(href='https://github.com/arturr0/python-simulator' target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit;").git
+                      | Tensorflow.js, MNIST
+                a(href='https://github.com/arturr0/HWR' target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit;").git
                   .gitEng
                     div.border(style="white-space: nowrap;") 
                       i.icon-github-circled
@@ -242,9 +236,9 @@ html(lang='en')
           "An experimental multiplayer web app where players compete to train neural networks to solve a ballistic problem. Each user controls their own AI agent, adjusting weights in real time. A shooting simulation visualized with p5.js and Matter.js shows how well the AI performs. The faster and more accurate the AI learns, the better the player's score. A blend of real-time training, physics, and fun.",
           "Eksperymentalna aplikacja webowa, w której użytkownicy rywalizują, trenując sieci neuronowe do rozwiązywania problemu balistycznego. Każdy gracz steruje własnym agentem AI, modyfikując wagi modelu w czasie rzeczywistym. Symulacja strzałów jest animowana za pomocą bibliotek p5.js i Matter.js, co pozwala na wizualizację skuteczności algorytmu. Im szybciej i dokładniej AI się uczy, tym lepszy wynik osiąga gracz. To połączenie nauki, fizyki i zabawy w czasie rzeczywistym."
         ],
-        [
-          "This browser-based visualization tool helps users explore fundamental mechanics through interactive function graphing. Built with p5.js, it dynamically renders position-time functions alongside their velocity and acceleration curves using real-time numerical derivatives. Ideal for introductory dynamics, the app supports polynomial motion, harmonic oscillations, and basic vibrations with adjustable parameters. Features include live tangent lines, area calculations, and intuitive graph scaling—all designed to build intuition around how derivatives represent motion.",
-          "Narzędzie pomaga użytkownikom zrozumieć podstawy mechaniki dzięki interaktywnym wykresom funkcji. Zbudowane w oparciu o p5.js, dynamicznie rysuje wykresy położenia w czasie oraz odpowiadające im wykresy prędkości i przyspieszenia, wykorzystując pochodne numeryczne. Aplikacja świetnie sprawdza się w nauce podstaw dynamiki — obsługuje funkcje wielomianowe i drgania z możliwością regulacji parametrów. Wśród dostępnych funkcji znajdują się m.in. dynamiczne styczne, obliczanie pól pod wykresami oraz intuicyjne skalowanie — wszystko zaprojektowane tak, aby ułatwiać budowanie intuicji fizycznej dotyczącej znaczenia pochodnych w opisie ruchu."
+        [ 
+          "This is a simple digit recognition app that uses a neural network trained on the MNIST dataset. Users can draw digits (0-9) on a canvas, and the model will try to predict the number in real time. The app demonstrates how neural networks can process visual input directly from user handwriting. Note: Due to Google security constraints (for example, cross-origin restrictions), the model does not work online and must be run locally. To run locally: See the README file in the GitHub repository for setup instructions.",
+          "Prosta aplikacja do rozpoznawania cyfr, wykorzystująca sieć neuronową wytrenowaną na zbiorze danych MNIST. Użytkownik może narysować cyfrę (0-9) na w canvas, a model spróbuje rozpoznać ją w czasie rzeczywistym. Projekt pokazuje, jak sieci neuronowe mogą przetwarzać obrazy odręcznego pisma użytkownika. Uwaga: Ze względu na ograniczenia Google (na przykład restrykcje CORS), aplikacja nie działa online – należy uruchomić ją lokalnie. Instrukcja lokalnego uruchomienia: znajduje się w pliku README w repozytorium GitHub."
         ],
         [
           "The program's task is to solve a differential equation of motion with a third derivative. The equation is implemented in the Simulink environment as a block diagram. The MATLAB program displays the solution of the equation in the form of plots of frequency, jerk (third derivative), acceleration (second derivative), velocity (first derivative), and displacement as functions of time.", 
