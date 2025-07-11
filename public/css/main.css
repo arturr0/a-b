@@ -184,9 +184,15 @@ hr {
     height: auto;
   }
 
-  .main .projectImg {
+  .main .projectImg:not(#oringImg) {
     width: 23vw;
     height: auto;
+  }
+
+  .main #oringImg {
+    width: 8vw;
+    height: auto;
+    margin-bottom: 10px;
   }
 
   .main .tables {
@@ -1105,7 +1111,7 @@ width: 100%;
   margin-right: 4px;
 }
 
-#displayed-image {
+#displayed-image:not(.oring) {
   width: 900px;
   height: auto;
 }
@@ -1353,9 +1359,19 @@ width: 100%;
     font-size: clamp(1rem, 4vh, 2rem);
   }
 
-  .image .projectImg {
+  .image .projectImg:not(#oringImg) {
     width: 35vw;
     height: auto;
+  }
+
+  #oringImg {
+    width: auto;
+    height: 400px;
+  }
+
+  .oring {
+    height: 80vh;
+    width: auto;
   }
 }
 

@@ -120,20 +120,22 @@ $(document).ready(function () {
   let currentImage = null;
   images.forEach(image => {
     image.addEventListener("click", function () {
-      const src = this.querySelector("img").getAttribute("src"); // Corrected line
-
-
-      // Set the clicked image as the current image
+      const src = this.querySelector("img").getAttribute("src");
       currentImage = image;
-      // Update the displayed image
       displayedImage.src = src;
-      displayedImageNumber.innerText = imageNumber;
 
-      // Update the thumbnail
+      // Update the thumbnail selection
       images.forEach(thumbnail => {
         thumbnail.classList.remove("selected");
       });
       this.classList.add("selected");
+
+      // Check for orning.jpg and apply class
+      if (displayedImage.src.includes('orning.jpg')) {
+        displayedImage.classList.add('oring');
+      } else {
+        displayedImage.classList.remove('oring');
+      }
     });
   });
   // $('#projects').hover(
@@ -179,6 +181,11 @@ function toggleElements() {
 function display() {
   $("#viewer").css("display", "flex")
   $("#homeContentPojects").css("display", "none")
+
+
+
+
+
 }
 
 function back() {
