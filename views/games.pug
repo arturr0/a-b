@@ -113,6 +113,7 @@ html(lang='en')
         #viewer
           #image-viewer
             img(src='' onclick="back()")#displayed-image
+            i.fas.fa-compress.reduce-icon
         #homeContentPojects
           #textEng(style="width: 100%;")
             div.project
@@ -121,23 +122,24 @@ html(lang='en')
               .imageDescription
                 .image
                   img(src='public/images/snake.png' onclick="display()").projectImg
+                  i.fas.fa-expand.enlarge-icon
                 .description
                   | "ASCII Snake" is a project that I am particularly proud of. The animation and control of the snake are entirely my original solutions. The game operates in real-time, displaying ASCII encoding characters instead of graphics. This makes the code easily convertible to another programming language. Download the file and test the game. Control the snake using the W, S, A, D keys.
               .tables(style="width: 35%") 
                 .tech
-                  div.border.not(style="white-space: nowrap;") 
+                  div.border.not
                     i.icon-cogs
                     p.borderContent
                       | C++
                 a(href='https://github.com/arturr0/snake' target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit;").git
                   .gitEng
-                    div.border(style="white-space: nowrap;") 
+                    div.border
                       i.icon-github-circled
                       p.borderContent
                         | GitHub
                 a(href='public/downloads/snake.zip' download="snake.zip" style="color: black;")
                   .downloadContainer
-                    div.border(style="white-space: nowrap;") 
+                    div.border
                       i.icon-download-1
                       .down.Eng(style="display: flex; align-items: center;")
                         .downloadEng.toggle-element.visible
@@ -151,23 +153,24 @@ html(lang='en')
               .imageDescription
                 .image
                   img(src='https://cdn.glitch.global/30cbcb14-ad57-42fd-9e95-d84a8b980a0f/tp2.png?v=1729245443183' onclick="display()").projectImg
+                  i.fas.fa-expand.enlarge-icon
                 .description
                   | The game is currently in development. It combines elements of a puzzle game and a 2D shooter. "Tetro Shooter" is my first experience with Allegro5, a multimedia library for C++. The implementation of graphical rendering is quite complex, but it offers significant possibilities. The controls are handled with the mouse. The game features 4 shooting modes, activated with the right mouse button. The middle button triggers the so-called "bullet-time" primarily known from the excellent "Max Payne" though this mechanic still needs some polishing. Download the game and check it out!
               .tables(style="width: 35%") 
                 .tech
-                  div.border.not(style="white-space: nowrap;") 
+                  div.border.not
                     i.icon-cogs
                     p.borderContent
                       | C++, Allegro5
                 a(href='https://github.com/arturr0/tetro-shooter' target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit;").git
                   .gitEng
-                    div.border(style="white-space: nowrap;") 
+                    div.border
                       i.icon-github-circled
                       p.borderContent
                         | GitHub
                 a(href='public/downloads/tetro shooter.rar' download="tetro shooter.rar" style="color: black;")
                   .downloadContainer
-                    div.border(style="white-space: nowrap;") 
+                    div.border
                       i.icon-download-1
                       .down.Eng(style="display: flex; align-items: center;")
                         .downloadEng.toggle-element.visible
@@ -181,23 +184,24 @@ html(lang='en')
               .imageDescription
                 .image
                   img(src='public/images/crazy shooter platformer.png' onclick="display()").projectImg
+                  i.fas.fa-expand.enlarge-icon
                 .description
                   | Platformer Game. This is my favorite genre of electronic entertainment, so I approached coding with particular enthusiasm. However, I did not expect how many challenges a platformer programmer faces. Physics, collision detection, character and environment animation, level design — these are just some of the issues that need to be addressed. The game has a built-in level editor. Gaps and platforms are created through "click and drag". You can also edit the position of enemies by clicking on the location where they should be. The character movement is controlled using the arrow keys, and firing is done by pressing the 'S' key.
               .tables(style="width: 35%") 
                 .tech
-                  div.border.not(style="white-space: nowrap;") 
+                  div.border.not
                     i.icon-cogs
                     p.borderContent
                       | JavaScript, HTML5, CSS
                 a(href='https://rustic-cold-ton.glitch.me/' target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit;").link
                   .linkEng
-                    div.border(style="white-space: nowrap;") 
+                    div.border
                       i.icon-globe
                       p.borderContent
                         | Link
                 a(href='https://github.com/arturr0/crazy' target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit;").git
                   .gitEng
-                    div.border(style="white-space: nowrap;") 
+                    div.border
                       i.icon-github-circled
                       p.borderContent
                         | GitHub
@@ -208,23 +212,24 @@ html(lang='en')
               .imageDescription
                 .image
                   img(src='https://cdn.glitch.global/fd8c17ca-2e39-4fe4-9974-ad0d481a3e1e/pong.bmp?v=1714759193607' onclick="display()").projectImg
+                  i.fas.fa-expand.enlarge-icon
                 .description
                   | The WebSocket protocol offers extensive possibilities for transmitting data between devices, which is why I decided to create a classic 'Pong' game in a multiplayer version using mentioned technology. The control is done using the mouse. Playing game on mobile device is possible when the browser is switched to the desktop mode. Adapting the size of the game board to the screen resolution of mobile devices is very limited due to the constraints imposed by the P5.JS library, which is used to render graphics and requires fixing size of the canvas element.
               .tables(style="margin-bottom: 10px")
                 .tech
-                  div.border.not(style="white-space: nowrap;") 
+                  div.border.not
                     i.icon-cogs
                     p.borderContent
                       | JavaScript, HTML5, CSS, WebSocket
                 a(href='https://fan-longhaired-jury.glitch.me/' target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit;").link
                   .linkEng
-                    div.border(style="white-space: nowrap;") 
+                    div.border
                       i.icon-globe
                       p.borderContent
                         | Link
                 a(href='https://github.com/arturr0/pong' target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit;").git
                   .gitEng
-                    div.border(style="white-space: nowrap;") 
+                    div.border
                       i.icon-github-circled
                       p.borderContent
                         | GitHub
@@ -235,23 +240,24 @@ html(lang='en')
               .imageDescription
                 .image
                   img(src='https://cdn.glitch.global/30cbcb14-ad57-42fd-9e95-d84a8b980a0f/warcaby.png?v=1725904451877' onclick="display()").projectImg
+                  i.fas.fa-expand.enlarge-icon
                 .description
                   | The project is in the production phase. It is a platform for card and board games, designed for multiple players. The connection is based on the WebSocket protocol. Server data is currently stored in a JSON file, but eventually, this function will be taken over by a database (SQL or MongoDB). Users will be able to participate in tournaments and integrate their own games. I also plan to add AI players based on Python libraries.      
               .tables(style="margin-bottom: 10px")
                 .tech
-                  div.border.not(style="white-space: nowrap;") 
+                  div.border.not
                     i.icon-cogs
                     p.borderContent
                       | JavaScript, HTML5, CSS, WebSocket
                 a(href='https://spiral-alder-orca.glitch.me' target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit;").link
                   .linkEng
-                    div.border(style="white-space: nowrap;") 
+                    div.border
                       i.icon-globe
                       p.borderContent
                         | Link
                 a(href='https://github.com/arturr0/WS-games' target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit;").git
                   .gitEng
-                    div.border(style="white-space: nowrap;") 
+                    div.border
                       i.icon-github-circled
                       p.borderContent
                         | GitHub

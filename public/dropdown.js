@@ -113,39 +113,38 @@ $(document).ready(function () {
       console.log(isDropdownVisible);
     }
   });
-  const images = document.querySelectorAll(".image");
   const viewer = document.getElementById("image-viewer");
-  const displayedImage = document.getElementById("displayed-image");
   const displayedImageNumber = document.getElementById("displayed-image-number");
   let currentImage = null;
-  images.forEach(image => {
-    image.addEventListener("click", function () {
-      const src = this.querySelector("img").getAttribute("src");
-      currentImage = image;
-      displayedImage.src = src;
+  // grab everything only once
+  const images = document.querySelectorAll('.image');
+  const displayedImage = document.getElementById('displayed-image');
 
-      // Update the thumbnail selection
-      images.forEach(thumbnail => {
-        thumbnail.classList.remove("selected");
-      });
-      this.classList.add("selected");
+  // turn the NodeList into a real array so we can get the index easily
+  const thumbs = Array.from(images);
 
-      // Check for orning.jpg and apply class
-      if (displayedImage.src.includes('orning.jpg')) {
-        displayedImage.classList.add('oring');
-      } else {
-        displayedImage.classList.remove('oring');
-      }
+  thumbs.forEach((thumb, i) => {
+    thumb.addEventListener('click', () => {
+      // 1. show the large image
+      displayedImage.src = thumb.querySelector('img').src;
+
+      // 2. clear previous selection
+      thumbs.forEach(t => t.classList.remove('selected'));
+
+      // 3. add the effect to the clicked thumb and its nearest siblings
+      thumb.classList.add('selected');              // clicked
+      if (i > 0) thumbs[i - 1].classList.add('selected'); // previous
+      if (i < thumbs.length - 1) thumbs[i + 1].classList.add('selected'); // next
+
+      // 4. optional flag on the big image
+      displayedImage.classList.toggle(
+        'oring',
+        displayedImage.src.includes('oring.jpg')
+      );
     });
   });
-  // $('#projects').hover(
-  //   function(){
-  //     $('.submenu1').css('background-color', '#555');
-  //   }, 
-  //   function(){
-  //     $('.submenu1').css('background-color', ''); // Revert to original background color
-  //   }
-  // );
+
+
 });
 function hidemenu() {
   $(".dropdown-content").css("display", "none");

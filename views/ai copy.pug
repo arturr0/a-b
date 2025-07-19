@@ -129,19 +129,19 @@ html(lang='en')
                   | An experimental multiplayer web app where players compete to train neural networks to solve a ballistic problem. Each user controls their own AI agent, adjusting weights in real time. A shooting simulation visualized with p5.js and Matter.js shows how well the AI performs. The faster and more accurate the AI learns, the better the player's score. A blend of real-time training, physics, and fun.
               .tables(style="width: 35%") 
                 .tech
-                  div.border.not
+                  div.border.not(style="white-space: nowrap;") 
                     i.icon-cogs
                     p.borderContent
                       | p5.js, Matter.js
                 a(href='https://github.com/arturr0/tank-rooms' target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit;").git
                   .gitEng
-                    div.border
+                    div.border(style="white-space: nowrap;") 
                       i.icon-github-circled
                       p.borderContent
                         | GitHub
                 a(href='https://tank-rooms.onrender.com/' target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit;").link
                   .linkEng
-                    div.border
+                    div.border(style="white-space: nowrap;") 
                       i.icon-globe
                       p.borderContent
                         | Link
@@ -157,13 +157,13 @@ html(lang='en')
                   | This is a simple digit recognition app that uses a neural network trained on the MNIST dataset. Users can draw digits (0-9) on a canvas, and the model will try to predict the number in real time. The app demonstrates how neural networks can process visual input directly from user handwriting. Note: Due to Google security constraints (for example, cross-origin restrictions), the model does not work online and must be run locally. To run locally: See the README file in the GitHub repository for setup instructions.              
               .tables(style="width: 35%") 
                 .tech
-                  div.border.not
+                  div.border.not(style="white-space: nowrap;") 
                     i.icon-cogs
                     p.borderContent
                       | Tensorflow.js, MNIST
                 a(href='https://github.com/arturr0/HWR' target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit;").git
                   .gitEng
-                    div.border
+                    div.border(style="white-space: nowrap;") 
                       i.icon-github-circled
                       p.borderContent
                         | GitHub
@@ -172,57 +172,30 @@ html(lang='en')
               .projectTitle
                 | "O-RING DETECTOR"
               .imageDescription
-                .image(style="margin-bottom: 10px")
+                .image
                   img(src='https://cdn.glitch.global/79283f6f-ef1e-4285-822b-eaefe68c462e/orning.jpg?v=1751228266800' onclick="display()").projectImg#oringImg
                   i.fas.fa-expand.enlarge-icon
                 .description
                   | AI-powered O-ring detection system with automatic diameter measurement. The model was trained locally using a dataset from Roboflow in PyTorch and converted to ONNX (Open Neural Network Exchange) format for efficient deployment. After calibration with a known object, the system can accurately measure the diameter of O-rings. The application uses React and WebGPU for fast in-browser inference and visualization.              
-                .tables(style="width: 35%;") 
+                .tables(style="width: 35%") 
                   .tech
-                    div.border.not
+                    div.border.not(style="white-space: nowrap;") 
                       i.icon-cogs
                       p.borderContent
                         | React, ONNX, PyTorch, Roboflow, WebGPU
                   a(href='https://github.com/arturr0/oring-recognition-vite' target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit;").git
                     .gitEng
-                      div.border
+                      div.border(style="white-space: nowrap;") 
                         i.icon-github-circled
                         p.borderContent
                           | GitHub
                   a(href='https://oring-recognition-vite.onrender.com' target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit;").link
                   .linkEng
-                    div.border
+                    div.border(style="white-space: nowrap;") 
                       i.icon-globe
                       p.borderContent
                         | Link
             hr(style="margin-right: 20px; margin-left: 20px; margin-bottom: 0; margin-top: 0;")
-            div.project
-              .projectTitle
-                | "NEURAL NETWORK FOR BALLISTIC"
-              .imageDescription
-                .image
-                  img(src='/public/images/tank.png' onclick="display()").projectImg
-                  i.fas.fa-expand.enlarge-icon
-                .description
-                  | This AI Snake game implements a Q-learning algorithm to train a snake to navigate a 20x20 grid, collecting food while avoiding collisions with walls and its own body. The project features real-time visualization using SDL, dynamic exploration rates for balanced learning, and performance tracking with charts (for web builds). Key optimizations include penalties for the snake getting too close to its body, faster game speeds for quicker training, and a reward system that encourages efficient pathfinding. The snake learns from both positive rewards (food collection) and negative penalties (collisions, circling behavior), with the AI adapting its strategy over thousands of episodes. The code supports both native execution (with SDL) and web deployment via Emscripten, including live metrics for exploration rates, scores, and Q-values.
-              .tables(style="width: 35%") 
-                .tech
-                  div.border.not
-                    i.icon-cogs
-                    p.borderContent
-                      | p5.js, Matter.js
-                a(href='https://github.com/arturr0/tank-rooms' target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit;").git
-                  .gitEng
-                    div.border
-                      i.icon-github-circled
-                      p.borderContent
-                        | GitHub
-                a(href='https://tank-rooms.onrender.com/' target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit;").link
-                  .linkEng
-                    div.border
-                      i.icon-globe
-                      p.borderContent
-                        | Link
     script(type='text/javascript').
       let storedViews = localStorage.getItem('views');
       document.getElementById('visitEng').textContent = "Visits: " + storedViews;
@@ -239,14 +212,6 @@ html(lang='en')
         [
           "An AI-powered O-ring detection system with automatic diameter measurement. The model was trained locally using a dataset from Roboflow in PyTorch and converted to ONNX (Open Neural Network Exchange) format for efficient deployment. After calibration with a known object, the system can accurately measure the diameter of O-rings. The application uses React and WebGPU for fast in-browser inference and visualization.",
           "System wykrywania uszczelek typu O-ring wspomagany sztuczną inteligencją z automatycznym pomiarem średnicy. Model został wytrenowany lokalnie na zbiorze danych z Roboflow przy użyciu PyTorch i przekonwertowany do formatu ONNX (Open Neural Network Exchange) w celu efektywnego wdrożenia. Po kalibracji z użyciem znanego obiektu system dokładnie mierzy średnicę uszczelek. Aplikacja wykorzystuje React i WebGPU do szybkiego wnioskowania oraz wizualizacji w przeglądarce."
-        ],
-        [
-          "This AI Snake game implements a Q-learning algorithm to train a snake to navigate a 20x20 grid, collecting food while avoiding collisions with walls and its own body. The project features real-time visualization using SDL, dynamic exploration rates for balanced learning, and performance tracking with charts (for web builds). Key optimizations include penalties for the snake getting too close to its body, faster game speeds for quicker training, and a reward system that encourages efficient pathfinding. The snake learns from both positive rewards (food collection) and negative penalties (collisions, circling behavior), with the AI adapting its strategy over thousands of episodes. The code supports both native execution (with SDL) and web deployment via Emscripten, including live metrics for exploration rates, scores, and Q-values.",
-          "Gra AI Snake wykorzystuje algorytm Q-learningu do trenowania węża, który porusza się po siatce 20x20, zbierając jedzenie i unikając kolizji ze ścianami oraz własnym ciałem. Projekt zawiera wizualizację w czasie rzeczywistym za pomocą biblioteki SDL, dynamiczne stawki eksploracji dla zrównowaczonego uczenia się oraz śledzenie wydajności za pomocą wykresów (dla wersji webowych). Kluczowe optymalizacje obejmują kary za zbliżanie się węża do własnego ciała, szybsze tempo gry w celu przyspieszenia treningu oraz system nagród promujący efektywne planowanie trasy. Wąż uczy się zarówno na podstawie pozytywnych nagród (zbieranie jedzenia), jak i negatywnych kar (kolizje, krążenie w miejscu), a algorytm dostosowuje strategię w trakcie tysięcy epizodów. Kod obsługuje zarówno natywne uruchamianie (z użyciem SDL), jak i wdrożenie w przeglądarce przez Emscripten, oferując na żywo metryki dotyczące współczynników eksploracji, wyników i wartości Q."
-        ],
-        [
-          "This AI Snake game implements a Q-learning algorithm to train a snake to navigate a 20x20 grid, collecting food while avoiding collisions with walls and its own body. The project features real-time visualization using SDL, dynamic exploration rates for balanced learning, and performance tracking with charts (for web builds). Key optimizations include penalties for the snake getting too close to its body, faster game speeds for quicker training, and a reward system that encourages efficient pathfinding. The snake learns from both positive rewards (food collection) and negative penalties (collisions, circling behavior), with the AI adapting its strategy over thousands of episodes. The code supports both native execution (with SDL) and web deployment via Emscripten, including live metrics for exploration rates, scores, and Q-values.",
-          "Gra AI Snake wykorzystuje algorytm Q-learningu do trenowania węża, który porusza się po siatce 20x20, zbierając jedzenie i unikając kolizji ze ścianami oraz własnym ciałem. Projekt zawiera wizualizację w czasie rzeczywistym za pomocą biblioteki SDL, dynamiczne stawki eksploracji dla zrównowaczonego uczenia się oraz śledzenie wydajności za pomocą wykresów (dla wersji webowych). Kluczowe optymalizacje obejmują kary za zbliżanie się węża do własnego ciała, szybsze tempo gry w celu przyspieszenia treningu oraz system nagród promujący efektywne planowanie trasy. Wąż uczy się zarówno na podstawie pozytywnych nagród (zbieranie jedzenia), jak i negatywnych kar (kolizje, krążenie w miejscu), a algorytm dostosowuje strategię w trakcie tysięcy epizodów. Kod obsługuje zarówno natywne uruchamianie (z użyciem SDL), jak i wdrożenie w przeglądarce przez Emscripten, oferując na żywo metryki dotyczące współczynników eksploracji, wyników i wartości Q."
         ]
       ];
     script(src='public/dropdown.js')

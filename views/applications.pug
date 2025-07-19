@@ -6,12 +6,32 @@ html(lang='en')
     link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css")
     link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css")
     style.
-      //- #aboutMe {
-      //-   background-color: rgb(128, 128, 128, 0.9);
-      //- }
-      //- #aboutMe:hover {
-      //-   background-color: #555;
-      //- }
+      .projectImg {
+        position: relative;
+        cursor: pointer;
+      }
+      .projectImg::after {
+        content: '\f065'; /* Font Awesome expand icon */
+        font-family: 'Font Awesome 6 Free';
+        font-weight: 900;
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
+        background: rgba(0,0,0,0.7);
+        color: white;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 14px;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+      .projectImg:hover::after {
+        opacity: 1;
+      }
     script(src='https://code.jquery.com/jquery-3.6.0.min.js')
     meta(charset='UTF-8')
     meta(name='viewport' content='width=device-width, initial-scale=1.0')
@@ -39,18 +59,16 @@ html(lang='en')
           const pageviewsCount = document.getElementById('visitEng');
           const pageviewsCount1 = document.getElementById('visitPol');
           if (pageviewsCount || pageviewsCount1) {
-            pageviewsCount.textContent = "Visits: " + views; // Display pageviews to the user
+            pageviewsCount.textContent = "Visits: " + views;
             pageviewsCount1.textContent = "Wizyty: " + views;
           }
           sessionStorage.setItem("visit", "x");
-          // Store 'views' in localStorage
           localStorage.setItem('views', views);
         })
         .catch((error) => {
           console.error('Error:', error);
         });
       } else {
-        // If not a page load or refresh, check if it's a specific page
         if (prevURL != 'https://artur-bednarski.onrender.com/applications' &&
           prevURL != 'https://artur-bednarski.onrender.com/mechanics' &&
           prevURL != 'https://artur-bednarski.onrender.com/games' &&
@@ -61,10 +79,9 @@ html(lang='en')
             const pageviewsCount = document.getElementById('visitEng');
             const pageviewsCount1 = document.getElementById('visitPol');
             if (pageviewsCount || pageviewsCount1) {
-              pageviewsCount.textContent = "Visits: " + views; // Display pageviews to the user
+              pageviewsCount.textContent = "Visits: " + views;
               pageviewsCount1.textContent = "Wizyty: " + views;
             }
-            // Store 'views' in localStorage
             localStorage.setItem('views', views);
           })
           .catch((error) => {
@@ -74,14 +91,12 @@ html(lang='en')
           stored = true;
         }
       }
-    //console.log(window.location.href);
   body
     span.tooltip-textEng
     span.tooltip-textPol
     img.code(src='https://cdn.glitch.global/0c5397c2-8b81-453e-a90c-14d5c20cfd5d/bgg2.jpg?v=1744915037039')
     .content
       .menu
-        //- div.submenu1
         div.aboutLeft
         a#aboutMe(href='/' style="border-bottom: solid #84ff0f 2px;")
           div#engAbout.toggle-element.visible About Me
@@ -114,6 +129,7 @@ html(lang='en')
         #viewer
           #image-viewer
             img(src='' onclick="back()")#displayed-image
+            i.fas.fa-compress.reduce-icon  
         #homeContentPojects
           #textEng(style="width: 100%;")
             div.project
@@ -122,23 +138,24 @@ html(lang='en')
               .imageDescription
                 .image
                   img(src='https://cdn.glitch.global/d003696d-9cab-4d96-baa5-bb1fa981a660/cipherconnect.png?v=1735931631075' onclick="display()").projectImg
+                  i.fas.fa-expand.enlarge-icon
                 .description
                   | Cipher Connect allows seamless communication between users. Messages are delivered instantly to connected parties using WebSocket technology. Authentication is handled securely with JSON Web Tokens (JWT), an authorization standard that protects the privacy and integrity of conversations. The application uses an SQLite database to store credentials, messages, and interactions. Sensitive information is encrypted with advanced cryptographic algorithms to ensure maximum security.
               .tables 
                 .tech
-                  div.border.not(style="white-space: nowrap;") 
+                  div.border.not
                     i.icon-cogs
                     p.borderContent
                       | JavaScript, HTML5, CSS, WebSocket, Crypto, JWT, SQL
                 a(href='https://cipherconnect.onrender.com' target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit;").link
                   .linkEng
-                    div.border(style="white-space: nowrap;") 
+                    div.border
                       i.icon-globe
                       p.borderContent
                         | Link
                 a(href='https://github.com/arturr0/CipherConnect2' target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit;").git
                   .gitEng
-                    div.border(style="white-space: nowrap;") 
+                    div.border
                       i.icon-github-circled
                       p.borderContent
                         | GitHub
@@ -149,23 +166,24 @@ html(lang='en')
               .imageDescription
                 .image
                   img(src='https://cdn.glitch.global/0c5397c2-8b81-453e-a90c-14d5c20cfd5d/movie.png?v=1744715671809' onclick="display()").projectImg
+                  i.fas.fa-expand.enlarge-icon
                 .description
                   | NestJS-based API for ranking movies and movie-related people. The application allows users to rank movies, actors, and directors, while providing real-time updates using Server-Sent Events (SSE). Authentication and security are handled using JWT and bcrypt for password hashing. It offers a structured RESTful API for managing movies, rankings, and users. Movie data is sourced from The Movie Database (TMDB), ensuring up-to-date and reliable information.
               .tables 
                 .tech
-                  div.border.not(style="white-space: nowrap;") 
+                  div.border.not
                     i.icon-cogs
                     p.borderContent
                       | React, NestJS, SSE, PostreSQL, Bcrypt, JWT
                 a(href='https://movieranker-react.onrender.com' target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit;").link
                   .linkEng
-                    div.border(style="white-space: nowrap;") 
+                    div.border
                       i.icon-globe
                       p.borderContent
                         | Link
                 a(href='https://github.com/arturr0/MovieRanker' target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit;").git
                   .gitEng
-                    div.border(style="white-space: nowrap;") 
+                    div.border
                       i.icon-github-circled
                       p.borderContent
                         | GitHub
@@ -176,23 +194,24 @@ html(lang='en')
               .imageDescription
                 .image
                   img(src='https://cdn.glitch.global/79283f6f-ef1e-4285-822b-eaefe68c462e/w.png?v=1751408497071' onclick="display()").projectImg
+                  i.fas.fa-expand.enlarge-icon
                 .description
                   | A simple warehouse inventory management application built with React, Express, and MongoDB. The system provides complete CRUD (Create, Read, Update, Delete) functionality for product inventory with real-time data visualization.
               .tables(style="margin-bottom: 10px;") 
                 .tech
-                  div.border.not(style="white-space: nowrap;") 
+                  div.border.not
                     i.icon-cogs
                     p.borderContent
                       | React, Express.JS, MongoDB 
                 a(href='https://warehouse-api-react.onrender.com' target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit;").link
                   .linkEng
-                    div.border(style="white-space: nowrap;") 
+                    div.border
                       i.icon-globe
                       p.borderContent
                         | Link
                 a(href='https://github.com/arturr0/warehouse-api-react' target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit;").git
                   .gitEng
-                    div.border(style="white-space: nowrap;") 
+                    div.border
                       i.icon-github-circled
                       p.borderContent
                         | GitHub
@@ -203,17 +222,18 @@ html(lang='en')
               .imageDescription
                 .image
                   img(src='https://cdn.glitch.global/30cbcb14-ad57-42fd-9e95-d84a8b980a0f/los.png?v=1725907419328' onclick="display()").projectImg
+                  i.fas.fa-expand.enlarge-icon
                 .description
                   | A set of Visual Basic for Applications scripts for automatic data migration between MS Word and MS Excel.
               .tables(style="margin-bottom: 10px;") 
                 .tech
-                  div.border.not(style="white-space: nowrap;") 
+                  div.border.not
                     i.icon-cogs
                     p.borderContent
                       | Visual Basic for Applications  
                 a(href='https://github.com/arturr0/VBA-scripts' target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit;").git
                   .gitEng
-                    div.border(style="white-space: nowrap;") 
+                    div.border
                       i.icon-github-circled
                       p.borderContent
                         | GitHub
@@ -223,17 +243,18 @@ html(lang='en')
               .imageDescription
                 .image
                   img(src='https://cdn.glitch.global/30cbcb14-ad57-42fd-9e95-d84a8b980a0f/bike.png?v=1726246581499' onclick="display()").projectImg
+                  i.fas.fa-expand.enlarge-icon
                 .description
                   | Console-based SQL database management application utilizing C++ and interface ODBC to interact with a Microsoft SQL Server. Implemented features for user account creation, login, and account updates. The application includes error handling and data validation, providing a secure and efficient way to manage user data. The interface allows users to perform CRUD operations with options to validate input and display error messages for database interactions.
               .tables(style="width: 35%") 
                 .tech
-                  div.border.not(style="white-space: nowrap;") 
+                  div.border.not
                     i.icon-cogs
                     p.borderContent
                       | C++, SQL
                 a(href='https://github.com/arturr0/C-SQL-handler' target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit;").git
                   .gitEng
-                    div.border(style="white-space: nowrap;") 
+                    div.border
                       i.icon-github-circled
                       p.borderContent
                         | GitHub
